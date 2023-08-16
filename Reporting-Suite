@@ -1,0 +1,1988 @@
+{
+	"info": {
+		"_postman_id": "c263ba5c-13c0-401b-ad5a-411d64983a36",
+		"name": "Reporting service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28623448"
+	},
+	"item": [
+		{
+			"name": "Get Token Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"  //Token\r",
+							"  const jsonRes = pm.response.json()\r",
+							"  const token = jsonRes.access_token\r",
+							"  pm.environment.set('access_token',\"Bearer \" + token)\r",
+							"  pm.collectionVariables.set('access_token',\"Bearer \" + token)\r",
+							" // pm.globals.set('access_token',\"Bearer \" + token)\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var scenarioText = \"Authentication\";\r",
+							"console.log(scenarioText);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "e994b0f4-eb47-48f4-badb-f9e61c94491b",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "jOl7Q~XZ0mkzUmEDAgB2L2LPoxhWQCyu5uUke",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "resource",
+							"value": "https://clcsdev.onmicrosoft.com/e994b0f4-eb47-48f4-badb-f9e61c94491b",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "https://graph.microsoft.com/.default",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/916215fe-f4d7-4657-a141-207fdcde5ada/oauth2/token ",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"916215fe-f4d7-4657-a141-207fdcde5ada",
+						"oauth2",
+						"token "
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "e994b0f4-eb47-48f4-badb-f9e61c94491b",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "jOl7Q~XZ0mkzUmEDAgB2L2LPoxhWQCyu5uUke",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "resource",
+									"value": "https://clcsdev.onmicrosoft.com/e994b0f4-eb47-48f4-badb-f9e61c94491b",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "https://graph.microsoft.com/.default",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://login.microsoftonline.com/916215fe-f4d7-4657-a141-207fdcde5ada/oauth2/token ",
+							"protocol": "https",
+							"host": [
+								"login",
+								"microsoftonline",
+								"com"
+							],
+							"path": [
+								"916215fe-f4d7-4657-a141-207fdcde5ada",
+								"oauth2",
+								"token "
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "P3P",
+							"value": "CP=\"DSP CUR OTPi IND OTRi ONL FIN\""
+						},
+						{
+							"key": "x-ms-request-id",
+							"value": "f59b05d0-fc07-463d-87f8-ce319e2e1400"
+						},
+						{
+							"key": "x-ms-ests-server",
+							"value": "2.1.12381.24 - NCUS ProdSlices"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "fpc=At-8sA9DtaNApeu7WNlCnoHV_sbRAQAAAAHZjdkOAAAA; expires=Sat, 05-Mar-2022 14:09:06 GMT; path=/; secure; HttpOnly; SameSite=None"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "x-ms-gateway-slice=estsfd; path=/; secure; samesite=none; httponly"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "stsservicecookie=estsfd; path=/; secure; samesite=none; httponly"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Feb 2022 14:09:05 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1363"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": \"3599\",\n    \"ext_expires_in\": \"3599\",\n    \"expires_on\": \"1643900946\",\n    \"not_before\": \"1643897046\",\n    \"resource\": \"https://clcsdev.onmicrosoft.com/e994b0f4-eb47-48f4-badb-f9e61c94491b\",\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik1yNS1BVWliZkJpaTdOZDFqQmViYXhib1hXMCJ9.eyJhdWQiOiJlOTk0YjBmNC1lYjQ3LTQ4ZjQtYmFkYi1mOWU2MWM5NDQ5MWIiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vOTE2MjE1ZmUtZjRkNy00NjU3LWExNDEtMjA3ZmRjZGU1YWRhL3YyLjAiLCJpYXQiOjE2NDM4OTcwNDYsIm5iZiI6MTY0Mzg5NzA0NiwiZXhwIjoxNjQzOTAwOTQ2LCJhaW8iOiJFMlpnWURCMExiZGgxdnR5VjNsVlFPT2kveFVyQUE9PSIsImF6cCI6ImU5OTRiMGY0LWViNDctNDhmNC1iYWRiLWY5ZTYxYzk0NDkxYiIsImF6cGFjciI6IjEiLCJvaWQiOiI4ZWIyZjc0MC04ZDdiLTRhNTQtOTk1Yy01Mzc3N2M4NmE3NzgiLCJyaCI6IjAuQVIwQV9oVmlrZGYwVjBhaFFTQl8zTjVhMnZTd2xPbEg2X1JJdXR2NTVoeVVTUnNkQUFBLiIsInN1YiI6IjhlYjJmNzQwLThkN2ItNGE1NC05OTVjLTUzNzc3Yzg2YTc3OCIsInRpZCI6IjkxNjIxNWZlLWY0ZDctNDY1Ny1hMTQxLTIwN2ZkY2RlNWFkYSIsInV0aSI6IjBBV2I5UWY4UFVhSC1NNHhuaTRVQUEiLCJ2ZXIiOiIyLjAiLCJpbnN0cnRpZCI6IklCUyJ9.iiAUUopCCMy2HiGADVYrsXJQr-2G_wRcP8Eoqv-HTxaMKlPNXb9x2TJ5Vu8wqoluOoP9Y4Yax4rZPPVx9SfeWvgCbL8e4Xju8mHsOFA_2d5UR9dnBwHJNnJLpJsPmswAVrhQNnAGPoiOp6Kjdc2Lv_WgX1p4apP-9OLcRs8zH8gBc7lCDHyMBmIUC7Q7sjmHv8n3y0OGqdE50rrsMpC8uBxd7TayiZF8GpOA2R5JrmrTLZMf7S4ZeFEompJz-bcuMWjKRBiOWONyPj0Ht08FXScC9xhkDGLYJz5LBfD4FVI9Efms5VRbhK-t6rbHPe4ttPAyWPdJysK04FOZIR-QVA\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all available templates",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var scenarioText = \"Get all available templates. \\n\\n1.Authenticate.\\n2.Retrieve all Templates\";\r",
+							"console.log(scenarioText);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list-all",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"institutions",
+						"{{institution}}",
+						"environments",
+						"{{environment}}",
+						"products",
+						"{{product}}",
+						"template-list-all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Returns an simple message",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list-all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list-all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"templatedID\": \"{{$randomUUID}}\",\n        \"templateName\": \"Commercial Summmary 1\",\n        \"type\": \"Commercial Summary\",\n        \"category\": \"Product\",\n        \"status\": \"active\"\n    },\n    {\n        \"templatedID\": \"{{$randomUUID}}\",\n        \"templateName\": \"Collateral LTV\",\n        \"type\": \"Collateral Summary\",\n        \"category\": \"Product\",\n        \"status\": \"inactive\"\n    }\n]"
+				},
+				{
+					"name": "Unauthenticated",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list-all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list-all"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"401 Unauthenticated\",\n  \"description\": \"Please, authenticate\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"401\",\n      \"category\": \"Error\",\n      \"description\": \"Missing Authentication\",\n      \"date\": \"{{dateNow}}\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": ""
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list-all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list-all"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"403 Forbidden\",\n  \"description\": \"Missing or expired token.\",\n  \"messageSource\": \"some generic message source\",\n  \"details\": [\n    {\n      \"code\": \"403\",\n      \"category\": \"Error\",\n      \"description\": \"Missing Bearer\",\n      \"date\": \"{{dateNow}}\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "No Instance found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/institutions/BLA/environments/{{environment}}/products/{{product}}/template-list-all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"BLA",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list-all"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"404 Not found.\",\n  \"description\": \"No Instance found.\",\n  \"messageSource\": \"some generic message source\",\n  \"details\": [\n    {\n      \"code\": \"404\",\n      \"category\": \"Not found.\",\n      \"description\": \"Wrong Instance.\",\n      \"date\": \"{{dateNow}}\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Internal Server Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list-all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list-all"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"500 Internal Server Error\",\n  \"description\": \"Lost connection to the server.\",\n  \"messageSource\": \"some generic message source\",\n  \"details\": [\n    {\n      \"code\": \"500\",\n      \"category\": \"Error\",\n      \"description\": \"Internal Server Error\",\n      \"date\": \"{{dateNow}}\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list-all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list-all"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"503 Error calling the API\",\n  \"description\": \"Object refference.\",\n  \"messageSource\": \"some generic message source\",\n  \"details\": [\n    {\n      \"code\": \"403\",\n      \"category\": \"Error\",\n      \"description\": \"Object refference.\",\n      \"date\": \"{{dateNow}}\"\n    }\n  ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get list of Categories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var responseData = pm.response.json();\r",
+							"//var categoryArray = [];\r",
+							"//var categoryId = [];\r",
+							"//for (var i = 0; i < responseData.length; i++) {\r",
+							"//    categoryArray.push(responseData[i].categoryName);\r",
+							"//    categoryId.push(responseData[i].categoryId);\r",
+							"//}\r",
+							"\r",
+							"pm.test(\"Assert there are Categories\", function(){\r",
+							"    pm.expect(responseData.length >= 0)\r",
+							"})\r",
+							"for (var i = 0; i < responseData.length; i++) {\r",
+							"    pm.test(\"Category name is not null for object \" + i, function() {\r",
+							"        pm.expect(responseData[i].categoryName).to.not.be.null;\r",
+							"    });\r",
+							"    pm.test(\"Category ID is not null for object \" + i, function() {\r",
+							"        pm.expect(responseData[i].categoryId).to.not.be.null;\r",
+							"    });\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var scenarioText = \"Get all available Categories \\n\\n1.Authenticate.\\n2.Retrieve all Categories\";\r",
+							"console.log(scenarioText);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/categories",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"institutions",
+						"{{institution}}",
+						"environments",
+						"{{environment}}",
+						"products",
+						"{{product}}",
+						"categories"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Returns an simple message",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/categories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"categories"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"categoryID\": \"<uuid>\",\n    \"categoryName\": \"<string>\",\n    \"description\": \"<string>\",\n    \"types\": [\n      {\n        \"typeName\": \"<string>\",\n        \"typeID\": \"<uuid>\"\n      },\n      {\n        \"typeName\": \"<string>\",\n        \"typeID\": \"<uuid>\"\n      }\n    ]\n  },\n  {\n    \"categoryID\": \"<uuid>\",\n    \"categoryName\": \"<string>\",\n    \"description\": \"<string>\",\n    \"types\": [\n      {\n        \"typeName\": \"<string>\",\n        \"typeID\": \"<uuid>\"\n      },\n      {\n        \"typeName\": \"<string>\",\n        \"typeID\": \"<uuid>\"\n      }\n    ]\n  }\n]"
+				},
+				{
+					"name": "Unauthenticated",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/categories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"categories"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/categories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"categories"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "No Instance found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/categories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"categories"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Internal Server Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/categories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"categories"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/categories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"categories"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Get list of Categories",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"categories"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Aug 2023 13:51:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "546"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-srv-trace",
+							"value": "v=1;t=b0a09398b71b4999"
+						},
+						{
+							"key": "x-srv-span",
+							"value": "v=1;s=d3eb8e4edf3a2aaa"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "120"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "118"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1691416350"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"222-3gwn3EYeRDM6B10187dHj6iNUzM\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"categoryID\": \"<uuid>\",\n        \"categoryName\": \"<string>\",\n        \"description\": \"<string>\",\n        \"types\": [\n            {\n                \"typeName\": \"<string>\",\n                \"typeID\": \"<uuid>\"\n            },\n            {\n                \"typeName\": \"<string>\",\n                \"typeID\": \"<uuid>\"\n            }\n        ]\n    },\n    {\n        \"categoryID\": \"<uuid>\",\n        \"categoryName\": \"<string>\",\n        \"description\": \"<string>\",\n        \"types\": [\n            {\n                \"typeName\": \"<string>\",\n                \"typeID\": \"<uuid>\"\n            },\n            {\n                \"typeName\": \"<string>\",\n                \"typeID\": \"<uuid>\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Generate a Report from Style File and PDF File",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var scenarioText = \"Generate a Report with modified product template and pdf data file.\\n\\n1.Retrieve a list of all product templates.\\n2.Choose and download a product template locally.\\n3.Customize the template's styles and save it.\\n4.Upload the customized template to the API and await approval.\\n5.Receive a notification upon template approval and publishing.\\n6.Retrieve the approved template.\\n7.Submit a request to generate a report using the customized template and data file. Expect a new report notification with the customized styling and data.\";\r",
+							"console.log(scenarioText);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dataJson\": \"\",\n  \"templatedID\": \"\",\n  \"fileType\": \"pdf\"\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/report-generate",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"institutions",
+						"{{institution}}",
+						"environments",
+						"{{environment}}",
+						"products",
+						"{{product}}",
+						"report-generate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Returns an simple message",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataJson\": \"<string>\",\n  \"templatedID\": \"{{$randomUUID}}\",\n  \"fileType\": \"pdf\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/report-generate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"report-generate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"MessageStatus\": {\n        \"responseCode\": \"200 OK\",\n        \"description\": \"Report generated successfully.\",\n        \"messageSource\": \"Message source\"\n    },\n    \"Report\": [\n        {\n            \"templateID\": \"{{$randomUUID}}\",\n            \"source\": \"Report Base\",\n            \"dataFile\": \"source path\",\n            \"category\": \"Commercial\",\n            \"type\": \"Summary\",\n            \"description\": \"Summary of a loan request\",\n            \"status\": \"active\",\n            \"reportBytes\": \"longstring\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Unauthenticated",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataJson\": \"<string>\",\n  \"templatedID\": \"<uuid>\",\n  \"fileType\": \"pdf\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/report-generate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"report-generate"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataJson\": \"<string>\",\n  \"templatedID\": \"<uuid>\",\n  \"fileType\": \"pdf\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/report-generate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"report-generate"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "No Instance found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataJson\": \"<string>\",\n  \"templatedID\": \"<uuid>\",\n  \"fileType\": \"pdf\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/report-generate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"report-generate"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Internal Server Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataJson\": \"<string>\",\n  \"templatedID\": \"<uuid>\",\n  \"fileType\": \"pdf\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/report-generate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"report-generate"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataJson\": \"<string>\",\n  \"templatedID\": \"<uuid>\",\n  \"fileType\": \"pdf\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/report-generate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"report-generate"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get filtrated templates by category",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var scenarioText = \"Filter templates by category.\\n\\n1.Authenticate.\\n2.Retrieve a list of all product templates filtered by category.\";\r",
+							"console.log(scenarioText);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"category\": \"<string>\",\n  \"type\": \"<string>\",\n  \"status\": \"active\"\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"institutions",
+						"{{institution}}",
+						"environments",
+						"{{environment}}",
+						"products",
+						"{{product}}",
+						"template-list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Returns an simple message",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category\": \"<string>\",\n  \"type\": \"<string>\",\n  \"status\": \"active\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"templatedID\": \"<uuid>\",\n    \"templateName\": \"<string>\",\n    \"type\": \"<string>\",\n    \"category\": \"<string>\",\n    \"status\": \"active\"\n  },\n  {\n    \"templatedID\": \"<uuid>\",\n    \"templateName\": \"<string>\",\n    \"type\": \"<string>\",\n    \"category\": \"<string>\",\n    \"status\": \"inactive\"\n  }\n]"
+				},
+				{
+					"name": "Unauthenticated",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category\": \"<string>\",\n  \"type\": \"<string>\",\n  \"status\": \"active\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category\": \"<string>\",\n  \"type\": \"<string>\",\n  \"status\": \"active\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "No Instance found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category\": \"<string>\",\n  \"type\": \"<string>\",\n  \"status\": \"active\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Internal Server Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category\": \"<string>\",\n  \"type\": \"<string>\",\n  \"status\": \"active\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category\": \"<string>\",\n  \"type\": \"<string>\",\n  \"status\": \"active\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"responseCode\": \"<string>\",\n  \"description\": \"<string>\",\n  \"messageSource\": \"<string>\",\n  \"details\": [\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"element\": \"<string>\",\n      \"elementValue\": \"<string>\",\n      \"location\": \"<string>\"\n    }\n  ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create new Template",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var scenarioText = \"Create new Template with custom styles.\\n\\n1.Authenticate.\\n2.Retrieve a Template of Product category.\\n3.Edit the Template and Save it.\\n4.Upload the new Template and assert status in review \\n5.Receive a notification that the Template is approved and published\";\r",
+							"console.log(scenarioText);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "       {\"templatedID\": \"{{$randomUUID}}\",\r\n        \"templateName\": \"{{$randomProductName}} Summmary\",\r\n        \"type\": \"Summary\",\r\n        \"category\": \"Product\",\r\n        \"status\": \"active\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"institutions",
+						"{{institution}}",
+						"environments",
+						"{{environment}}",
+						"products",
+						"{{product}}",
+						"template-list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successfully created new Template",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "       {\"templatedID\": \"{{$randomUUID}}\",\r\n        \"templateName\": \"{{$randomProductName}} Summmary\",\r\n        \"type\": \"Summary\",\r\n        \"category\": \"Product\",\r\n        \"status\": \"active\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/institutions/{{institution}}/environments/{{environment}}/products/{{product}}/template-list/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"institutions",
+								"{{institution}}",
+								"environments",
+								"{{environment}}",
+								"products",
+								"{{product}}",
+								"template-list",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 08:59:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "294"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-srv-trace",
+							"value": "v=1;t=de4ff95c8dae02a0"
+						},
+						{
+							"key": "x-srv-span",
+							"value": "v=1;s=ac4d5f8b9eb6a548"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "120"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "119"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1691485201"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"126-oexlDp3GOAT+cy2zer4C4xxgot0\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "    \"MessageStatus\": {\n        \"responseCode\": \"201 OK\",\n        \"description\": \"New Template Created.\",\n        \"messageSource\": \"Message source\"\n    }, \n    {\n      \"templatedID\": \"{{$randomUUID}}\",\n        \"templateName\": \"{{$randomProductName}} Summmary\",\n        \"type\": \"Summary\",\n        \"category\": \"Product\",\n        \"status\": \"active\"}\n    }\n"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const dateNow = new Date(); ",
+					"pm.collectionVariables.set(\"dateNow\",dateNow);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "dateNow",
+			"value": "{{dateNow}}",
+			"type": "string"
+		},
+		{
+			"key": "institution",
+			"value": "IBS"
+		},
+		{
+			"key": "environment",
+			"value": "IBS_Develop"
+		},
+		{
+			"key": "product",
+			"value": "TEST"
+		},
+		{
+			"key": "access_token",
+			"value": ""
+		},
+		{
+			"key": "uuidTemplate",
+			"value": "uuidTemplate"
+		}
+	]
+}
